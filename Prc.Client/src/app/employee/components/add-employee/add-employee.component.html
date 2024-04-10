@@ -1,0 +1,97 @@
+<form [formGroup]="employeeForm" class="form-container mt-5">
+    <h2 id="title">Add Employee</h2>
+    <div class="form-group">
+        <label for="idNumber" class="form-label">Employee ID</label>
+        <input type="text" id="idNumber" formControlName="idNumber" class="form-control input-highlight">
+        <ng-container *ngIf="employeeForm.controls['idNumber'].errors as idNumberError">
+            <p *ngIf="idNumberError['required']" class="text-danger">ID number is required!</p>
+            <p *ngIf="employeeForm.controls['idNumber'].invalid && employeeForm.controls['idNumber'].errors?.['pattern']"
+                class="text-danger">Must contain 9 digits!</p>
+
+        </ng-container>
+    </div>
+
+    <div class="form-group">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" id="firstName" formControlName="firstName" class="form-control input-highlight">
+        <ng-container *ngIf="employeeForm.controls['firstName'].errors as firstNameError">
+            <p *ngIf="firstNameError['required']" class="text-danger">First name is required!</p>
+        </ng-container>
+    </div>
+
+    <div class="form-group">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" id="lastName" formControlName="lastName" class="form-control input-highlight">
+        <ng-container *ngIf="employeeForm.controls['lastName'].errors as lastNameError">
+            <p *ngIf="lastNameError['required']" class="text-danger">Last name is required!</p>
+        </ng-container>
+    </div>
+
+    <div class="form-group">
+        <label for="gender" class="form-label">Gender:</label>
+        <select id="gender" formControlName="gender" class="form-select input-highlight">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <ng-container *ngIf="employeeForm.controls['gender'].errors as genderError">
+            <p *ngIf="genderError['required']" class="text-danger">gender is required!</p>
+        </ng-container>
+    </div>
+
+    <div class="form-group">
+        <label for="birthDate" class="form-label">Date of Birth</label>
+        <input type="date" id="birthDate" formControlName="birthDate" class="form-control input-highlight">
+        <ng-container *ngIf="employeeForm.controls['birthDate'].errors as birthDateError">
+            <p *ngIf="birthDateError['required']" class="text-danger">Date of Birth is required!</p>
+        </ng-container>
+    </div>
+
+    <div class="form-group">
+        <label for="entryWorkDate" class="form-label">Entry Work Date</label>
+        <input type="date" id="entryWorkDate" formControlName="entryWorkDate" class="form-control input-highlight">
+        <ng-container *ngIf="employeeForm.controls['entryWorkDate'].errors as entryWorkDateError">
+            <p *ngIf="entryWorkDateError['required']" class="text-danger">Entry Work Date is required!</p>
+        </ng-container>
+    </div>
+
+    <div class="card mb-3 card-body">
+        <h5 class="card-title">Roles</h5>
+        <div formArrayName="roles">
+            <div *ngFor="let role of rolesFormArray.controls; let i = index" class="role-group" [formGroupName]="i">
+                <div class="mb-3">
+                    <label>
+                        <select formControlName="roleId" class="form-select" (change)="changeRole()">
+                            <option *ngFor="let role of roleList" [value]="role.id"
+                                [disabled]="isRoleDisabled(role.id)">{{ role.description }}</option>
+                        </select>
+                        Role title
+                    </label>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-check-label">
+                        Administrative Role
+                        <input type="checkbox" formControlName="isAdministrative" class="form-check-input">
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="startDate" class="form-label">Start Date</label>
+                    <input type="date" id="startDate" formControlName="startDate" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-outline-danger" (click)="removeRole(i)">
+                            <i class="fas fa-trash"></i> <!-- Trash icon -->
+                            Remove
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" (click)="addRole()" class="btn btn-primary btn-add-role">Add Role</button>
+    <button type="button" (click)="saveEmployee()" id="save" [disabled]="employeeForm.invalid">Save</button>
+</form>

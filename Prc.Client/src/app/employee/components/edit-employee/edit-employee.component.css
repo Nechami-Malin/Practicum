@@ -1,0 +1,168 @@
+.card {
+  width: 300px;
+  background-color: #464646;
+  border: 1px solid #464646;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  color: #28c19b;
+  font-size: 1.5rem;
+}
+
+.role-group {
+  margin-bottom: 10px;
+}
+
+.btn-outline-danger {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-outline-danger:focus {
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
+}
+
+.form-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #28c19b;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.select-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn-add-role {
+  margin-bottom: 20px;
+}
+
+.role-group {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.role-group label {
+  font-weight: bold;
+}
+
+.btn-remove-role {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-remove-role:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+.btn-add-role {
+  color: #fff;
+  background-color: #444343;
+  border-color: #444343;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 16px;
+  display: block;
+  margin: 0 auto;
+}
+
+.btn-add-role:hover {
+  background-color: #333;
+  border-color: #333;
+}
+
+.btn-save {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-save:hover {
+  background-color: #444343;
+  border-color: #444343;
+}
+
+.card {
+  width: 60%;
+  margin: auto;
+  border-radius: 20px;
+  background-color: #444343;
+  color: #28c19b;
+  padding: 20px;
+}
+
+.role-card {
+  border-radius: 20px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group:focus-within input {
+  border: 2px solid #333;
+}
+
+.form-group input {
+  border: 2px solid #28c19b;
+}
+
+#save {
+  background-color: #28c19b;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 16px;
+}
+
+button#save:hover {
+  background-color: #28c19b;
+}
+
+#title {
+  text-align: center;
+  color: #28c19b;
+}

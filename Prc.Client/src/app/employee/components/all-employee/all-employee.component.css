@@ -1,0 +1,94 @@
+.employee-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.employee-table th, .employee-table td {
+    padding: 12px;
+    border: 1px solid #dddddd;
+    text-align: left;
+}
+
+.employee-table th {
+    background-color: #28c19b;
+    font-weight: bold;
+    text-align: center;
+}
+
+.employee-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.employee-table tbody tr:hover {
+    background-color: #e1e1e1;
+}
+
+.employee-table td {
+    font-size: 14px;
+    color: #333333;
+    text-align: center;
+}
+
+  
+  .search-button button {
+    background-color: transparent;
+    border: none;
+  }
+  
+  .search-button button mat-icon {
+    color: #666;
+  }
+  
+  .search-container {
+    align-items: center; /* יישור הכלים לאורך הציר האנכי */
+  }
+  
+  .search-input {
+    align-items: center;
+    flex: 1; 
+    padding: 10px; /* רווח בתוך ה-input */
+    border-radius: 5px; /* פינות מעוגלות ל-input */
+    border: 1px solid #ccc; /* גבול סמוך סמוך לעטיפת ה-input */
+    margin-left: 40%;
+  }
+  
+  .i {
+    /* background-color: transparent; רקע חדיר של הכפתור */
+    border: none; /* מסיר גבולות */
+    cursor: pointer; /* סמן של יד כאשר עוברים על הכפתור */
+  }
+  
+  .search-button:hover {
+    color: #28c19b; /* צבע טקסט כאשר עוברים על הכפתור */
+  }
+  
+  .edit {
+    background-color: #28c19b; /* צבע רקע */
+    color: white; /* צבע טקסט */
+    border: none; /* מסגרת */
+    border-radius: 5px; 
+    padding: 8px 16px; /* מרווחי פנים */
+    cursor: pointer; /* סמל עכבר */
+    transition: background-color 0.3s ease; /* אנימציה */
+  }
+  
+  .edid:hover {
+    background-color: #0056b3; /* צבע רקע בעת העצירה */
+  }
+  
+  .delete-btn {
+    background-color: #ffffff; /* צבע רקע */
+    color: #dc3545; /* צבע טקסט */
+    border:   2px; /* מסגרת */
+    border-color: #dc3545;
+    border-radius: 5px; /* רינוע */
+    padding: 8px 16px; /* מרווחי פנים */
+    cursor: pointer; /* סמל עכבר */
+    transition: background-color 0.3s ease; /* אנימציה */
+  }
+  
+  .delete-btn:hover {
+    background-color: #c82333; /* צבע רקע בעת העצירה */
+    color: #ffffff;
+  }
+  

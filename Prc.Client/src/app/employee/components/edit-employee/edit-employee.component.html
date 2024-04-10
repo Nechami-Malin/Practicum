@@ -1,0 +1,145 @@
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="form-container mt-5">
+
+    <div class="form-group">
+      <label for="idNumber" class="form-label">Id Number</label>
+      <input
+        type="text"
+        formControlName="idNumber"
+        class="form-control input-highlight"
+        [ngClass]="{ 'is-invalid': submitted && f['idNumber'].errors }"
+      />
+      @if (submitted && f['idNumber'].errors) {
+      <div class="invalid-feedback">
+        @if (f['idNumber'].errors['required']) {
+        <p>ID number is required</p>
+        }
+      </div>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="firstName" class="form-label">First Name</label>
+      <input
+        type="text"
+        formControlName="firstName"
+        class="form-control input-highlight"
+        [ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }"
+      />
+      @if (submitted && f['firstName'].errors) {
+      <div class="invalid-feedback">
+        @if (f['firstName'].errors['required']) {
+        <div>First Name is required!</div>
+        }
+      </div>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="lastName" class="form-label">Last Name</label>
+      <input type="text" formControlName="lastName" class="form-control input-highlight"
+        [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }"
+      />
+      @if (submitted && f['lastName'].errors) {
+      <div class="invalid-feedback">
+        @if (f['lastName'].errors['required']) {
+        <div>lastName is required!</div>
+        }
+      </div>
+      }
+    </div>
+
+<div class="form-group">
+      <label for="gender" class="form-label">Gender</label>
+      <select
+        type="text" formControlName="gender" class="form-control input-highlight"
+        [ngClass]="{ 'is-invalid': submitted && f['gender'].errors }"
+      >
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      </select>
+      @if (submitted && f['gender'].errors) {
+      <div class="invalid-feedback">
+        @if (f['gender'].errors['required']) {
+        <div>lastName is required!</div>
+        }
+        
+      </div>
+      }
+    </div>
+    <div class="form-group">
+      <label for="birthDate" class="form-label">Date of Birth</label>
+      <input
+      type="date"
+      formControlName="birthDate"
+      class="form-control input-highlight"
+      [ngClass]="{ 'is-invalid': submitted && f['birthDate'].errors }"
+      />
+  
+      @if (submitted && f['birthDate'].errors) {
+      <div class="invalid-feedback ">
+        @if (f['birthDate'].errors['required']) {
+        <div>Date of Birth is required!</div>
+        }
+      </div>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="entryWorkDate" class="form-label">Start of work date</label>
+      <input
+        type="date"
+        formControlName="entryWorkDate"
+        class="form-control input-highlight"
+        [ngClass]="{ 'is-invalid': submitted && f['entryWorkDate'].errors }"
+        [value]="f['entryWorkDate'].value"
+      />
+      @if (submitted && f['entryWorkDate'].errors) {
+      <div class="invalid-feedback">
+        @if (f['entryWorkDate'].errors['required']) {
+        <div>Start of work date is required!</div>
+        }
+      </div>
+      }
+    </div>
+    <div class="card mb-3 card-body">
+      <h5 class="card-title">Roles</h5>
+      <div formArrayName="roles">
+        <div *ngFor="let role of rolesFormArray.controls; let i = index" class="role-group" [formGroupName]="i">
+          <div class="mb-3">
+            <select formControlName="roleId" class="form-control" (change)="changeRole()">
+              <option *ngFor="let r of roleList" [value]="r.id" [disabled]="isRoleDisabled(r.id)">{{ r.description }}</option>
+            </select>
+            
+          </div>
+          <div class="mb-3">
+            <label class="form-check-label">
+              <input type="checkbox" formControlName="isAdministrative" class="form-check-input">
+              Administrative Role
+            </label>
+            <div class="form-group">
+              <label for="startDate">Start Date</label>
+              <input type="date"  id="startDate" formControlName="startDate" class="form-control">
+              <!-- <ng-container *ngIf="roles.controls['startDate'].errors as firstNameError">
+                <p *ngIf="roles.controls['startDate'].errors['required']" class="text-danger">* Entry Date is required</p>
+                <p *ngIf="roles.controls['startDate']" class="text-danger">* Entry Date must be greater than or equal to Employment Start Date</p>
+              </ng-container> -->
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="input-group-append">
+              <button type="button" class="btn btn-outline-danger" (click)="removeRole(i)">
+                <i class="fas fa-trash"></i>
+                Remove
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <button type="button" (click)="addRole()" class="btn btn-primary btn-add-role">Add Role</button>
+     <div class="form-group">
+      <button type="submit" class="btn btn-primary" >Update</button>
+      <button type="button" (click)="onReset()" class="btn btn-warning float-right">Reset</button>
+      <button type="button" mat-button color="warn" (click)="onClose()">Cancel</button>
+     </div>
+  </form>

@@ -1,0 +1,21 @@
+/* error-page.component.css */
+
+.error-container {
+    display: flex; /* Use flexbox to align the content */
+    flex-direction: column; /* Align the items vertically */
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
+    height: 100vh; /* Set the container height to be 100% of the viewport height */
+}
+
+.error-container h1 {
+    font-size: 3rem; /* Set the font size to 3rem */
+    font-family: 'Bambi', sans-serif; /* Set the font family to Bambi */
+    color: #333; /* Set the text color */
+    margin-bottom: 20px; /* Add some space between the heading and the image */
+}
+
+#error-container img {
+    max-width: 100%; /* Set the maximum width of the image to 100% */
+    height: auto; /* Allow the height to adjust proportionally */
+}

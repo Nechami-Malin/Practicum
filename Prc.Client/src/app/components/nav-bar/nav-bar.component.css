@@ -1,0 +1,69 @@
+.menu-links i{
+    color: #fff;
+}
+  .menu-links {
+    background-color: #444343; /* צבע רקע */
+    padding: 10px; /* מרווחים בפנים */
+}
+
+.menu-links h3 {
+    color: #28c19b; /* צבע טקסט */
+    margin-right: 20px; /* מרווח מימין */
+}
+
+.menu-links img {
+    margin-right: 20px; /* מרווח מימין */
+    color: #eee;
+}
+
+.menu-links a {
+    color: #fff; /* צבע טקסט */
+    text-decoration: none; 
+    margin-right: 20px;
+    border-radius: 10px;
+    background-color: #28c19b;
+    padding-top: 15px;
+}
+
+.menu-links button {
+    margin-right: 20px; /* מרווח מימין */
+}
+
+.add-button{
+    color: #fff; /* צבע טקסט */
+    background-color: #28c19b; /* צבע רקע */
+    border: none; /* אין מסגרת */
+    border-radius: 50%; /* רינוע עגול */
+    width: 40px; /* רוחב */
+    height: 40px; /* גובה */
+    cursor: pointer; /* מצביע יד */
+    margin-right: 10px; /* מרווח מימין */
+    
+}
+.menu-links {
+    background-color: #444343; /* צבע רקע */
+    padding: 10px; /* מרווחים בפנים */
+}
+
+.menu-links h3 {
+    color: #28c19b; /* צבע טקסט */
+    margin-right: 20px; /* מרווח מימין */
+}
+
+.menu-links img {
+    margin-right: 20px; /* מרווח מימין */
+}
+
+.menu-links a, .menu-links button {
+    color: #fff; /* צבע טקסט */
+    text-decoration: none; /* אין קו תחתון */
+    margin-right: 20px; /* מרווח מימין */
+    transition: background-color 0.3s; /* אנימציה של החלפת צבע הרקע */
+}
+
+.menu-links a:hover, .menu-links button:hover {
+    background-color: #28c19b; /* צבע רקע בעת העברת עכבר */
+    border-radius: 5px; /* רינוע עגול בעת העברת עכבר */
+}
+
+  

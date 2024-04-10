@@ -1,0 +1,30 @@
+<div class="search-container">
+    <input type="text" [(ngModel)]="searchText" placeholder="Search..." class="search-input" (ngModelChange)="filterEmployees()">
+        <i class="fas fa-search"></i>
+  </div>
+<table class="employee-table">
+    <thead>
+        <tr>
+            <th>Full name</th>
+            <th>Id number</th>
+            <th>Start worker date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of filteredEmployeeList">
+            <td>{{employee.firstName}} {{employee.lastName}}</td>
+            <td>{{employee.idNumber}}</td>
+            <td>{{employee.entryWorkDate}}</td>
+            <td>
+                <button class="edit" (click)="editEmployee(employee)">
+                    <i class="fas fa-pencil-alt"></i>
+                    Edit
+                </button>
+                <button (click)="deleteEmployee(employee.id)" class="delete-btn">
+                    <i class="fa fa-trash"></i> Delete
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
